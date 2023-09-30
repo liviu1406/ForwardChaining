@@ -1,0 +1,27 @@
+Proposition symbols
+    - Room[1, 1] has a Stench
+    - Room[2, 1] is Safe
+    - Room[2, 2] has a Stench
+    - Room[1, 2] has a Wumpus
+
+Horn Clauses
+    - If Room[1, 1] has a Stench and Room[2, 1] is Safe, then Room[1, 2] has a Wumpus
+    - If Room[2, 2] has a Stench and Room[1, 2] has a Wumpus, then Room[2, 1] is Safe
+    - If Room[1, 1] has a Stench and Room[2, 2] has a Stench, then Room[1, 2] has a Wumpus
+
+    CNF Form
+    - (¬Stench[1, 1] ∨ ¬Safe[2, 1] ∨ Wumpus[1, 2])
+    - (¬Stench[2, 2] ∨ ¬Wumpus[1, 2] ∨ Safe[2, 1])
+    - (¬Stench[1, 1] ∨ ¬Stench[2, 2] ∨ Wumpus[1, 2])
+
+    Assign each proposition symbol a unique integer
+    - Stench[1, 1] = 1
+    - Safe[2, 1] = 2
+    - Wumpus[1, 2] = 3
+    - Stench[2, 2] = 4
+
+    Represent in Java
+    new int[]{-1, -2, 3}
+    new int[]{-4, -3, 2}
+    new int[]{-1, -4, 3}
+
